@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/create', action:'PostController@AddPerson');
 Route::get('/read', action:'PostController@ReadAll');
+Route::get('/getId', action:'PostController@GetById');
+
 

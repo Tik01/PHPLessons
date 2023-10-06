@@ -34,4 +34,8 @@ class PostController extends Controller
             echo '<pre>'. $post;
         }
     }
+    public function GetById(){
+       $people = Post::find(4);
+       return $people;
+    }
 }
