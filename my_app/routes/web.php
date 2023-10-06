@@ -13,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', action:'PostController@index');
+Route::get('/', action:'PostController@AddPerson');
+// Route::get('/', action:'PostController@index');
+
