@@ -28,4 +28,10 @@ class PostController extends Controller
         }
         dd('CREATE METHOD');
     }
+
+    public function ReadAll(){
+        foreach (Post::all() as $post) {
+            echo '<pre>'. $post;
+        }
+    }
 }
