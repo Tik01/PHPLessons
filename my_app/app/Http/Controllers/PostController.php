@@ -38,4 +38,17 @@ class PostController extends Controller
        $people = Post::find(4);
        return $people;
     }
+    public function Update(){
+        $search = Post::find(2);
+        $search->update([
+            'name'=>'UUU',
+            'lastname'=>'UUU',
+            'age'=>22
+        ]);
+        dd('Update');
+    }
+    // public function Delete(){
+    //     $post = Post::find(3);
+    //     dd($post->name);
+    // }
 }
