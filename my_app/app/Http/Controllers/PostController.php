@@ -47,8 +47,9 @@ class PostController extends Controller
         ]);
         dd('Update');
     }
-    // public function Delete(){
-    //     $post = Post::find(3);
-    //     dd($post->name);
-    // }
+    public function Delete(){
+        $post = Post::find(3);
+        $post->delete();
+        dd('Delete record');
+    }
 }
