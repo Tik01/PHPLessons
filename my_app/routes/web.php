@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/posts', action:'PostController@index');
+Route::get('/posts', action:'PostController@index')->name('post.index');
+Route::get('/main', action:'MainController@index')->name('main.index');
+Route::get('/contact', action:'ContactController@index')->name('contact.index');
+Route::get('/about', action:'AboutController@index')->name('about.index');
+
+
+
 Route::get('/create', action:'PostController@AddPerson');
 Route::get('/read', action:'PostController@ReadAll');
 Route::get('/getId', action:'PostController@GetById');
