@@ -75,7 +75,7 @@ class PostController extends Controller
                 'name'=>'QQQ'
             ],[
                 'name'=>'QQQ',
-                'lastname'=>'LLLL',
+                'lastname'=>'NNNN',
                 'age'=>48
             ]);
             dd($post->name,
