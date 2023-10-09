@@ -20,5 +20,6 @@ Route::get('/getId', action:'PostController@GetById');
 Route::get('/update', action:'PostController@Update');
 Route::get('/delete', action:'PostController@Delete');
 Route::get('/restore', action:'PostController@Restore');
+Route::get('/first', action:'PostController@first_create');
 
 

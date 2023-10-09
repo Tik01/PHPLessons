@@ -57,4 +57,16 @@ class PostController extends Controller
         $post->restore();
         dd('Restore record');
     }
+    public function first_create(){
+            $post = Post::firstOrCreate([
+                'name'=>'QQQ'
+            ],[
+                'name'=>'QQQ',
+                'lastname'=>'sssss',
+                'age'=>29
+            ]);
+            dd($post->name,
+        $post->lastname,
+    $post->age);
+        }
 }
