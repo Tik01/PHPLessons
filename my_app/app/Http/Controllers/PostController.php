@@ -66,7 +66,20 @@ class PostController extends Controller
                 'age'=>29
             ]);
             dd($post->name,
-        $post->lastname,
-    $post->age);
+            $post->lastname,
+            $post->age);
+        }
+
+        public function update_create(){
+            $post = Post::updateOrCreate([
+                'name'=>'QQQ'
+            ],[
+                'name'=>'QQQ',
+                'lastname'=>'LLLL',
+                'age'=>48
+            ]);
+            dd($post->name,
+            $post->lastname,
+            $post->age);
         }
 }
