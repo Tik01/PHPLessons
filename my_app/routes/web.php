@@ -20,7 +20,8 @@ Route::get('/about', action:'AboutController@index')->name('about.index');
 
 
 
-Route::get('/create', action:'PostController@AddPerson');
+Route::get('/create', action:'PostController@create');
+Route::post('/posts', action:'PostController@store')->name('post.store');
 Route::get('/read', action:'PostController@ReadAll');
 Route::get('/getId', action:'PostController@GetById');
 Route::get('/update', action:'PostController@Update');

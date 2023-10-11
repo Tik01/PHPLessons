@@ -1,0 +1,85 @@
+.container{
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+/* CSS for horizontal navigation menu */
+.navbar {
+    background-color: #333; /* Background color */
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    float: left; /* Make list items float horizontally */
+}
+
+.navbar a {
+    display: block;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 14px 16px; /* Padding around each link */
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.navbar a:hover {
+    background-color: #ddd; /* Background color on hover */
+    color: black; /* Text color on hover */
+}
+
+/* CSS for the form */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Style the button on hover */
+.btn:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+/* Optional: Style the form error message */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
