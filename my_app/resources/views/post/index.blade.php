@@ -3,7 +3,7 @@
     <div>
         <div><a href="{{ route('post.create') }}" class="btn btn-primary mb-3">Add Post</a></div>
         @foreach ($posts as $post)
-            <div><a href="{{ route('post.show',$post->id) }}">{{ $post->id }}{{ $post->name }}-------------{{ $post->lastname }}</a></div>
+            <div><a href="{{ route('post.show',$post->id) }}">{{ $post->id }}.{{ $post->name }}-------------{{ $post->lastname }}</a></div>
         @endforeach
     </div>
 @endsection
