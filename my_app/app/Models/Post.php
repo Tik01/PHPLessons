@@ -13,4 +13,8 @@ class Post extends Model
 
     protected $table ='posts';
     protected $guarded = false;
+
+    public function university(){
+        return $this->belongsTo(University::class,'uname_id','id');
+    }
 }
