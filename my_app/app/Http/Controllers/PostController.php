@@ -12,9 +12,10 @@ class PostController extends Controller
 
 public function index(){
     $university = University::find(1);
+    $post = Post::find(1);
     // $posts = Post::Where('uname_id',$university->id)->get();
    
-    dd($university->posts);
+    dd($post->university);
 }
 
 public function create(){
