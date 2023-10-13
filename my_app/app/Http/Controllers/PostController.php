@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Tag;
 use App\Models\University;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -11,11 +12,11 @@ class PostController extends Controller
 {
 
 public function index(){
-    $university = University::find(1);
     $post = Post::find(1);
+    $tag = Tag::find(2);
     // $posts = Post::Where('uname_id',$university->id)->get();
    
-    dd($post->university);
+    dd($tag->posts);
 }
 
 public function create(){
