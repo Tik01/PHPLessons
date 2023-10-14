@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PostTag;
 use App\Models\Tag;
 use App\Models\University;
 use Illuminate\Contracts\View\View;
@@ -18,7 +19,9 @@ public function index(){
 
 public function create(){
     $universities = University::all();
-    return view('post.create',compact('universities'));
+    $tags = Tag::all();
+
+    return view('post.create',compact('universities','tags'));
 }
 
 public function store(){
@@ -27,8 +30,16 @@ public function store(){
         'lastname'=>'string',
         'age'=>'string',
         'uname_id'=>'',
+        'tags'=>'',
     ]);
-Post::create($data);
+    $tags = $data['tags'];
+    unset($data['tags']);
+
+  $post = Post::create($data);
+  
+  $post->tags()->attach($tags);
+
+
 return redirect()->route('post.index');
 }
 
