@@ -12,21 +12,21 @@ class PostController extends Controller
 {
 
 public function index(){
-    $post = Post::find(1);
-    $tag = Tag::find(2);
-    // $posts = Post::Where('uname_id',$university->id)->get();
-   
-    dd($tag->posts);
+    $posts = Post::all();
+   return view('post.index',compact('posts'));
 }
 
 public function create(){
-    return view('post.create');
+    $universities = University::all();
+    return view('post.create',compact('universities'));
 }
+
 public function store(){
     $data = request()->validate([
         'name'=>'string',
         'lastname'=>'string',
-        'age'=>'string'
+        'age'=>'string',
+        'uname_id'=>'',
     ]);
 Post::create($data);
 return redirect()->route('post.index');
@@ -37,13 +37,15 @@ return view('post.show',compact('post'));
 }
 
 public function edit(Post $post){
-    return view('post.edit', compact('post'));
+    $universities = University::all();
+    return view('post.edit', compact('post','universities'));
     }
     public function update(Post $post){
         $data = request()->validate([
             'name'=>'string',
-            'lastname'=>'',
-            'age'=>'string'
+            'lastname'=>'string',
+            'age'=>'string',
+            'uname_id'=>'',
         ]);
     $post->update($data);
         return redirect()->route('post.show',$post->id);
