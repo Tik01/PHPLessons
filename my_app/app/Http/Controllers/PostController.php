@@ -39,7 +39,6 @@ public function store(){
   
   $post->tags()->attach($tags);
 
-
 return redirect()->route('post.index');
 }
 
@@ -49,18 +48,28 @@ return view('post.show',compact('post'));
 
 public function edit(Post $post){
     $universities = University::all();
-    return view('post.edit', compact('post','universities'));
+    $tags = Tag::all();
+    return view('post.edit', compact('post','universities','tags'));
     }
+
     public function update(Post $post){
         $data = request()->validate([
             'name'=>'string',
             'lastname'=>'string',
             'age'=>'string',
             'uname_id'=>'',
+            'tags'=>'',
+
         ]);
+        $tags = $data['tags'];
+        unset($data['tags']);
+
     $post->update($data);
+     $post->tags()->sync($tags);
         return redirect()->route('post.show',$post->id);
     }
+
+
     public function destroy(Post $post){
         $post->delete();
         return redirect()->route('post.index');
