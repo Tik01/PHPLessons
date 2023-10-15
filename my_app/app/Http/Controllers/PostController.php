@@ -26,7 +26,7 @@ public function create(){
 
 public function store(){
     $data = request()->validate([
-        'name'=>'string',
+        'name'=>'required|string',
         'lastname'=>'string',
         'age'=>'string',
         'uname_id'=>'',
@@ -64,8 +64,8 @@ public function edit(Post $post){
         $tags = $data['tags'];
         unset($data['tags']);
 
-    $post->update($data);
-     $post->tags()->sync($tags);
+       $post->update($data);
+       $post->tags()->sync($tags);
         return redirect()->route('post.show',$post->id);
     }
 
