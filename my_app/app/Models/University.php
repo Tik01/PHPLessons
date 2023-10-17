@@ -10,6 +10,6 @@ class University extends Model
     use HasFactory;
 
     public function posts(){
-        return $this->hasMany(Post::class,'uname_id','id');
+        return $this->hasMany(Post::class,'uname_id');
     }
 }

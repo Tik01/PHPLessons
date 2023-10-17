@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /* Run the migrations.
+    /**
+     * Run the migrations.
      */
     public function up(): void
     {
@@ -15,18 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('lastname');
             $table->integer('age');
-
             $table->timestamps();
-
             $table->softDeletes();
 
-            $table->unsignedBigInteger('uname_id')->nullable();
-            $table->index('uname_id','post_university_idx');
-            $table->foreign('uname_id','post_university_fk')->on('universities')->references('id');
+            $table->unsignedBigInteger('uname_id');
         });
     }
 
-    /* Reverse the migrations.
+    /**
+     * Reverse the migrations.
      */
     public function down(): void
     {
