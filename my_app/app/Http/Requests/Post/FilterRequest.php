@@ -23,10 +23,8 @@ class FilterRequest extends FormRequest
     {
         return [
             'name'=>'string',
-            'lastname'=>'string',
             'age'=>'string',
             'uname_id'=>'',
-            'tags'=>'',
         ];
     }
 }
