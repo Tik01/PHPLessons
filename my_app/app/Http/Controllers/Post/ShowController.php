@@ -9,8 +9,8 @@ use App\Models\Tag;
 
 class ShowController extends BaseController
 {
-    public function __invoke(Post $post)
+    public function __invoke(Post $posts)
     {
-        return view('post.show',compact('post'));
+        return view('admin.post.show',compact('posts'));
     }
 }

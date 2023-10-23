@@ -6,14 +6,21 @@ use App\Models\Post;
 class Service{
 
     public function store($data){
+        $data = request()->validate([
+            'name'=>'required|string',
+            'lastname'=>'string',
+            'age'=>'string',
+            'uname_id'=>'',
+            'tags'=>'',
+        ]);
         $tags = $data['tags'];
         unset($data['tags']);
-  
-      $post = Post::create($data);
-      
-      $post->tags()->attach($tags);
+
+        $post = Post::create($data);
+
+        $post->tags()->attach($tags);
     }
-    
+
     public function update($post,$data){
         $tags = $data['tags'];
         unset($data['tags']);
