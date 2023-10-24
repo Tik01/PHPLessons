@@ -13,10 +13,11 @@
         <div class="row">
             <nav class="navbar">
                 <ul>
-                    <li><a href="{{ route('about.index') }}">About</a></li>
-                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
-                    <li><a href="{{ route('main.index') }}">Main</a></li>
-                    <li><a href="{{ route('post.index') }}">Posts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('about.index') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="{{ route('contact.index') }}">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="{{ route('main.index') }}">Main</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="{{ route('post.index') }}">Posts</a></li>
+                    <li class="nav-item"><a class="nav-link"  href="{{ route('admin.post.index') }}">Admin</a></li>
                 </ul>
             </nav>
     </div>
