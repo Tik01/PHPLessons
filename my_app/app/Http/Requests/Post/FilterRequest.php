@@ -25,6 +25,8 @@ class FilterRequest extends FormRequest
             'name'=>'string',
             'age'=>'string',
             'uname_id'=>'',
+            'page'=>'',
+            'per_page'=>''
         ];
     }
 }

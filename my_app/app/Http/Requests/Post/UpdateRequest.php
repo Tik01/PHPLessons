@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
         return [
             'name'=>'string',
             'lastname'=>'string',
-            'age'=>'string',
+            'age'=>'integer',
             'uname_id'=>'',
             'tags'=>'',
         ];
