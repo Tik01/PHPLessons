@@ -129,6 +129,10 @@
       <path value="$PROJECT_DIR$/my_app/vendor/nette/utils" />
       <path value="$PROJECT_DIR$/my_app/vendor/symfony/error-handler" />
       <path value="$PROJECT_DIR$/my_app/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/my_app/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/my_app/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/my_app/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/my_app/vendor/tymon/jwt-auth" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

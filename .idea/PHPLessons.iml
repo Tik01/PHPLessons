@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/my_app/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/my_app/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/my_app/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/dflydev/dot-access-data" />
@@ -125,6 +127,10 @@
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/stella-maris/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/my_app/vendor/tymon/jwt-auth" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
