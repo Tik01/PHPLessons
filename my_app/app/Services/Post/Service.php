@@ -30,10 +30,34 @@ class Service{
 
         return $post;
     }
-private function getTagId($tags){
+    private  function getUniversityIdWithUpdate($item){
+        if (!isset($item['id'])){
+           $university = University::create($item);
+        }else{
+            $university = University::find($item['id']);
+            $university->update($item);
+            $university = $university->fresh();
+        }
+        return $university->id;
+    }
+    private function getTagId($tags){
         $tagsIds = [];
+        foreach ($tags as $tag){
+            $tag = !isset($tag['id']) ? Tag::create($tag) : Tag::find($tag['id']);
+            $tagsIds[] = $tag->id;
+        }
+        return $tagsIds;
+    }
+    private function getTagIdWithUpdate($tags){
+    $tagsIds = [];
     foreach ($tags as $tag){
-        $tag = !isset($tag['id']) ? Tag::create($tag) : Tag::find($tag['id']);
+        if (!isset($tag['id'])){
+            $tag = Tag::create($tag);
+        }else{
+            $currentTag = Tag::find($tag['id']);
+            $currentTag->update($tag);
+            $tag = $currentTag->fresh();
+        }
         $tagsIds[] = $tag->id;
     }
     return $tagsIds;
@@ -44,11 +68,22 @@ private function getUniversityId($item){
   }
 
     public function update($post,$data){
-        $tags = $data['tags'];
-        unset($data['tags']);
+        try {
+            Db::beginTransaction();
 
-       $post->update($data);
-       $post->tags()->sync($tags);
+            $tags = $data['tags'];
+            $university = $data['university'];
+            unset($data['tags'], $data['university']);
+
+            $tagsIds = $this->getTagIdWithUpdate($tags);
+            $data['uname_id'] = $this->getUniversityIdWithUpdate($university);
+
+            $post->update($data);
+            $post->tags()->sync($tagsIds);
+        } catch (\Exception $exception){
+            DB::rollBack();
+            return $exception->getMessage();
+        }
        return $post->fresh();
     }
 }

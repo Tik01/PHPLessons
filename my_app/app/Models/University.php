@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class University extends Model
 {
     use HasFactory;
-
+    protected $guarded = false;
     public function posts(){
         return $this->hasMany(Post::class,'uname_id');
     }

@@ -25,7 +25,7 @@ class UpdateRequest extends FormRequest
             'name'=>'string',
             'lastname'=>'string',
             'age'=>'integer',
-            'uname_id'=>'',
+            'university'=>'',
             'tags'=>'',
         ];
     }
